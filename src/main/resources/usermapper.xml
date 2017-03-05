@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cpszju.dao.UserMapper">
+
+	<select id="selectUser" parameterType="int" resultType="User">
+		select * from User where age = #{age}
+	</select>
+	
+	<insert id="insertUser">
+		insert into User (name,age) values (#{0},#{1})
+	</insert>
+	
+	<insert id="insertManyUser">
+		insert into User (name,age) values 
+		<foreach collection="list" item="item" separator=",">
+			(#{item.name},#{item.age})
+		</foreach>
+	</insert>
+	
+	<update id="updateUser">
+		update User set
+		name = #{0}
+		where age = #{1}
+	</update>
+</mapper>
