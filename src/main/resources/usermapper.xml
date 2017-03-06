@@ -9,7 +9,7 @@
 	</select>
 	
 	<insert id="insertUser">
-		insert into User (name,age) values (#{0},#{1})
+		insert into User (name,age) values (#{name},#{age})
 	</insert>
 	
 	<insert id="insertManyUser">
@@ -21,7 +21,7 @@
 	
 	<update id="updateUser">
 		update User set
-		name = #{0}
-		where age = #{1}
+		name = #{name}
+		where age = #{age}
 	</update>
 </mapper>

@@ -28,9 +28,9 @@ public class App {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        userMapper.insertUser("lllll", 50);
-        userMapper.updateUser("pipi", 199);
-    	List<User> user = userMapper.selectUser(50);
+    	userMapper.insertUser("lin", 56);
+    	userMapper.updateUser("pipi", 56);
+    	List<User> user = userMapper.selectUser(15);
     	System.out.println(user.size());
         return "Hello World!";
     }
